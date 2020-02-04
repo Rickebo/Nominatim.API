@@ -1,4 +1,5 @@
 ﻿using GeoJSON.Net.Converters;
+using GeoJSON.Net.Geometry;
 using Newtonsoft.Json;
 
 namespace Nominatim.API.Models {
@@ -28,7 +29,7 @@ namespace Nominatim.API.Models {
         /// </summary>
         [JsonProperty("geojson")]
         [JsonConverter(typeof(GeoJsonConverter))]
-        private object GeoJSON { get; set; }
+        public IGeometryObject GeoJSON { get; set; }
 
 
         /// <summary>

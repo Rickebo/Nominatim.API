@@ -16,12 +16,15 @@ Fix HTTP header typo.</PackageReleaseNotes>
     <PackageLicenseUrl>https://github.com/f1ana/Nominatim.API/blob/master/LICENSE</PackageLicenseUrl>
     <AssemblyVersion>1.5.2.0</AssemblyVersion>
     <FileVersion>1.5.2.0</FileVersion>
+    <CopyLocalLockFileAssemblies>true</CopyLocalLockFileAssemblies>
   </PropertyGroup>
 
   <ItemGroup>
     <PackageReference Include="GeoJSON.Net" Version="1.1.64" />
     <PackageReference Include="Microsoft.AspNetCore.WebUtilities" Version="2.0.1" />
-    <PackageReference Include="Newtonsoft.Json" Version="10.0.3" />
+    <PackageReference Include="Newtonsoft.Json" Version="10.0.3">
+      <IncludeAssets></IncludeAssets>
+    </PackageReference>
   </ItemGroup>
 
 </Project>
