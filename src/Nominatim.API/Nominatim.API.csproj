@@ -22,9 +22,7 @@ Fix HTTP header typo.</PackageReleaseNotes>
   <ItemGroup>
     <PackageReference Include="GeoJSON.Net" Version="1.1.64" />
     <PackageReference Include="Microsoft.AspNetCore.WebUtilities" Version="2.0.1" />
-    <PackageReference Include="Newtonsoft.Json" Version="10.0.3">
-      <IncludeAssets></IncludeAssets>
-    </PackageReference>
+    <PackageReference Include="Newtonsoft.Json" Version="10.0.3" />
   </ItemGroup>
 
 </Project>
