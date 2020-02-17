@@ -14,6 +14,12 @@ namespace Nominatim.API.Web {
     public static class WebInterface {
         private static readonly HttpClient _httpClient = new HttpClient();
 
+        static WebInterface()
+        {
+            _httpClient.DefaultRequestHeaders.UserAgent.Clear();
+            _httpClient.DefaultRequestHeaders.UserAgent.Add(new ProductInfoHeaderValue("f1ana.Nominatim.API", Assembly.GetExecutingAssembly().GetName().Version.ToString()));
+        }
+
         /// <summary>
         ///     Send a request to the Nominatim server
         /// </summary>
@@ -23,9 +29,6 @@ namespace Nominatim.API.Web {
         /// <returns>Deserialized instance of T</returns>
         public static async Task<T> GetRequest<T>(string url, Dictionary<string, string> parameters) {
             var req = QueryHelpers.AddQueryString(url, parameters);
-
-            _httpClient.DefaultRequestHeaders.UserAgent.Clear();
-            _httpClient.DefaultRequestHeaders.UserAgent.Add(new ProductInfoHeaderValue("f1ana.Nominatim.API", Assembly.GetExecutingAssembly().GetName().Version.ToString()));
 
             var result = await _httpClient.GetStringAsync(req).ConfigureAwait(false);
             var settings = new JsonSerializerSettings {ContractResolver = new PrivateContractResolver()};
