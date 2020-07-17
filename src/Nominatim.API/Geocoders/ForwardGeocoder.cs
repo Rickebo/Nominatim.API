@@ -63,6 +63,7 @@ namespace Nominatim.API.Geocoders {
             c.AddIfSet("polygon_svg", r.ShowSVG);
             c.AddIfSet("polygon_text", r.ShowPolygonText);
             c.AddIfSet("extratags", r.ShowExtraTags);
+            c.AddIfSet("polygon_threshold", r.PolygonThreshold);
 
             return c;
         }

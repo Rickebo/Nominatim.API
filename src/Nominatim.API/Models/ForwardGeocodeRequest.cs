@@ -85,5 +85,12 @@
         ///     Output geometry of results as a WKT.
         /// </summary>
         public bool? ShowPolygonText { get; set; }
+
+        /// <summary>
+        ///     Simplify the output geometry before returning.
+        ///     The parameter is the tolerance in degrees with which the geometry may differ from the original geometry.
+        ///     Topology is preserved in the result.
+        /// </summary>
+        public double? PolygonThreshold { get; set; }
     }
 }
